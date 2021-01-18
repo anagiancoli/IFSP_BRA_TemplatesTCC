@@ -1,0 +1,23 @@
+% capa personalizada
+
+\begin{center}
+	
+	%\center
+	\ABNTEXchapterfont\large{\imprimirinstituicao} 
+	\vspace{3.5cm}
+	
+    \ABNTEXchapterfont\large{\imprimirautor}
+	\vspace{3.5cm}
+	
+    \ABNTEXchapterfont\bfseries\large{\imprimirtitulo\ifdef{\osubtitulo}{}{}}
+    
+    \ifdef{\osubtitulo}{\ABNTEXchapterfont\normalsize\imprimirsubtitulo}{}
+	\vfill
+	
+	\normalsize \mdseries{\imprimirlocal}
+	
+	\normalsize{\imprimirano}
+	
+	\vspace*{2cm}
+	
+\end{center}

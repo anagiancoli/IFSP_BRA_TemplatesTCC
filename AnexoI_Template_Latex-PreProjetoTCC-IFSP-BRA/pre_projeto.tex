@@ -1,0 +1,170 @@
+% Adaptado para IFSP-BRA por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
+%\renewcommand{\headrulewidth}{0pt} % retirando linha
+%\renewcommand{\footrulewidth}{1pt} % colocando linha
+
+%%%%%classe do documento%%%%%
+\documentclass[article,12pt, a4paper]{abntex2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
+\renewcommand{\familydefault}{\sfdefault} % define como default.
+%\usepackage{lmodern}			% Usa a fonte Latin Modern		
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+
+%%%%%%%Pacotes%%%%%%%%%%%%%%
+%\usepackage{lmodern}	
+%\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{float}
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
+%\citebrackets[]
+\usepackage{indentfirst}
+\usepackage{lipsum}
+\usepackage{cmap}
+\usepackage{capa}
+\usepackage{fancyhdr}
+\usepackage{fancybox} % Adicionado para criar uma moldura ao redor da página
+\fancypage{\setlength{\fboxsep}{12pt}\fbox}{} % incluído a moldura da página
+
+%%%%%%%%%%%%%%%%% cor das referências %%%%%%%%%%%%%%%%%
+\hypersetup{
+		colorlinks=true,       		% false: boxed links; true: colored links
+		linkcolor=blue,        		% color of internal links
+		citecolor=blue,        		% color of links to bibliography
+		filecolor=magenta,     		% color of file links
+		urlcolor=blue}
+
+\IfFileExists{html.sty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{url6023} % Adequado para atender a norma ABNT 6023:2018 por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
+
+
+%%%%%%%%%%%%% Linhas para Inserir o programa %%%%%%%%%%%%%%%%%%%%%
+%Para trocar os dados da capa basta ir no arquivo capa.sty,alterando
+%as seguintes linhas:
+
+%41- \ABNTEXchapterfont\large \textbf{Área de concentração:} Sua Área de Concentração\\%area de concentracao
+
+%42- \ABNTEXchapterfont\large \textbf{Linha de pesquisa:} Sua linha de pesquisa\\%linha de pesquisa
+
+%43-  \ABNTEXchapterfont\large \textbf{Tema:} Seu tema\\%tema 
+
+%O arquivo está dentro do projeto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%% tirando a impressão frente e verso  %%%%%%%%%%%%%%
+\setboolean{@twoside}{false}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% Dados gerais %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titulo{ANEXO I\\Proposta de Trabalho de Conclusão de Curso (TCC)}
+\autor{Prontuário: BPXXXXXX - Autor 1\\Prontuário: BPXXXXXX - Autor 2\\Prontuário: BPXXXXXX - Autor 3}
+\local{Bragança Paulista}
+\data{Ano}
+\orientador{Prof. Dr(a)./MsC./Me. Orientador(a)}
+\coorientador{Prof. Dr(a)./MsC./Me. Orientador(a)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%begin{titlepage}
+	
+%	\begin{center}
+%		\includegraphics[width=70mm]{imagens/unb_bandeira.png}\\[0.2cm]
+%		{\large Universidade de Brasília\\}
+%		Faculdade de Tecnologia\\
+%		Departamento de Engenharia Elétrica\\[2cm]
+%		{\large \textbf{Pré-Projeto de Dissertação(Mestrado Acadêmico)}}\\[2cm]
+%		{\large
+%			Helton Alves de Azevedo\\[1cm]
+%			\textbf{Área de concentração:} Sistemas Eletrônicos\\
+%			\textbf{Linha de pesquisa:} Microeletrônica\\[0.5cm]
+%			\textbf{Tema:} Construção e Estudo de Viabilidade de um Transceptor para o Padrão Ingenu RPMA Utilizando Circuitos Baseandos em CNTFETs e MOSFETs\\[2cm]
+%			Orientador\\
+%			Prof. Dr. Sandro Augusto Pavlik Haddad\\[0.5cm]
+%			Brasília\\
+%			2019\\
+%			
+%			}
+%	\end{center}
+%\end{titlepage}
+
+\imprimircapa
+\textual
+
+%\thisfancypage{\setlength{\fboxsep}{12pt}\fbox}{} % incluído a moldura da página
+\section{Título e Proposta do Projeto}
+
+\subsection{Título do Projeto}
+%\textbf{Indique aqui seu título / tema}
+\begin{tabular}{|m{15cm}|}
+			\hline
+			\textbf{Indique o título do projeto aqui} \\
+			\hline
+		\end{tabular}
+\input{includes/introducao}
+
+\subsection{Problema de pesquisa}
+Neste item indique o problema a ser pesquisado. Pergunta.
+
+\input{includes/justificativa}
+\input{includes/objetivos}
+\input{includes/metodo}
+\input{includes/metodologia}
+
+\subsection{Resultados esperados}
+Descrever ...
+
+\input{includes/cronograma}
+%\thisfancypage{\setlength{\fboxsep}{12pt}\fbox}{} % incluído a moldura da página
+
+	% ----------------------------------------------------------
+	% ELEMENTOS PÓS-TEXTUAIS
+	% ----------------------------------------------------------
+    \newpage
+  %  \thisfancypage{\setlength{\fboxsep}{12pt}\fbox}{}
+
+    \bibliography{referencias}
+\vspace{5cm}
+
+
+    \begin{center}
+		\begin{tabular}{|m{5cm}|m{10cm}|}
+			\hline
+			\textbf{Alunos} & \textbf{Assinatura} \\
+			\hline
+			\textit{Nome do Autor 1} & \\
+			\hline
+			\textit{Nome do Autor 2} & \\
+			\hline
+			\textit{Nome do Autor 3} & \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+\vspace{0.5cm}
+
+	\begin{center}
+		\begin{tabular}{|m{5cm}|m{10cm}|}
+			\hline
+			\textbf{Orientador(es)} & \textbf{Assinatura} \\
+			\hline
+			\textit{Nome do Orientador 1} & \\
+			\hline
+			\textit{Nome do Coorientador 1} & Se não tiver, comentar a linha com percentual na frente e no hline seguinte também.\\
+			\hline
+		\end{tabular}
+	\end{center}
+
+\input{includes/apendices} %incluído somente com exemplos. Deve ser desconsiderado no documento final. Para isso, basta inserir um percentual na frente do \input. Igual foi feito em anexos.
+
+%\input{includes/anexos}
+
+\end{document}
+

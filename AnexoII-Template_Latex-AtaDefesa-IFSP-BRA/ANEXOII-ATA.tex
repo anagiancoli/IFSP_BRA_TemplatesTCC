@@ -1,0 +1,116 @@
+% Template ANEXO II - Regulamento de TCC criado para IFSP-BRA por profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
+% Adequar o arquivo antes de imprimir
+
+\documentclass[12pt,a4paper]{report}
+\pagestyle{empty}
+\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
+\renewcommand{\familydefault}{\sfdefault} % define como default.
+
+\usepackage[utf8]{inputenc}
+\usepackage{gensymb} % para usar simbolo de graus
+\usepackage{textcomp}  % para usar simbolo de graus\textdregree
+\usepackage{graphics}
+\usepackage{graphicx,url}
+%\usepackage[top=1cm, bottom=1cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=2.7cm, bottom=2cm, left=2cm, right=1.5cm,headheight=30pt]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{ \includegraphics[scale=0.35]{IFSP-BRA.png} }
+\cfoot{	\centering \tiny{Curso de \curso \\IFSP - Campus Bragança Paulista – bra.ifsp.edu.br – Fone: (0xx11) 4034–7800.\\
+Av. Major Fernando Valle, 2013 – São Miguel – Bragança Paulista – SP, Brasil – CEP 12903–000} }
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\usepackage{enumitem} % para colocar (a)
+\hyphenpenalty=5000 % para evitar que ultrapasse as margens e faca hifenacao
+\tolerance=1000     % para evitar que ultrapasse as margens e faca hifenacao
+
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
+%
+\newcommand{\universidade}{Instituto Federal de Educação, Ciência e Tecnologia de São Paulo}
+\newcommand{\instituicao}{Instituto Federal de São Paulo}
+\newcommand{\campus}{Câmpus Bragança Paulista}
+\newcommand{\cidade}{Bragança Paulista}
+\newcommand{\curso}{Tecnologia em Análise e Desenvolvimento de Sistemas}
+\newcommand{\cursoA}{CURSO SUPERIOR DE TECNOLOGIA EM \\ANÁLISE E DESENVOLVIMENTO DE SISTEMAS}
+%{Curso Superior em Tecnologia em Análise e Desenvolvimento de Sistemas}
+\newcommand{\cabecalho}{ANEXO II - ATA DE DEFESA DO TRABALHO DE CONCLUSÃO DE CURSO}
+%{ANEXO II - Ata de Defesa do Trabalho de Conclusão de Curso}
+\newcommand{\membroAD}{Assinatura do Membro da Banca (1)}
+\newcommand{\membroBD}{Assinatura do Membro da Banca (2)}
+\newcommand{\membroCD}{Assinatura do Membro da Banca (3)}
+
+\newcommand{\tema}{Título do TCC}
+
+%EDITAR AS INFORMACOES AQUI (somente no conteudo que esta entre entre as ultimas chaves de cada linha!!!)
+\newcommand{\dia}{XX}
+\newcommand{\mes}{mes}
+\newcommand{\ano}{ano}
+\newcommand{\hora}{hora}
+\newcommand{\minutos}{minutos}
+\newcommand{\alunoA}{seu nome completo} %se mais de um aluno, preecher os demais
+\newcommand{\alunoB}{seu nome completo}
+\newcommand{\alunoC}{seu nome completo}
+\newcommand{\prontuarioA}{BP999999} % se mais de um aluno, preecher os demais
+\newcommand{\prontuarioB}{BP999999}
+\newcommand{\prontuarioC}{BP999999}
+\newcommand{\membroA}{Nome Completo do Membro (1)}
+\newcommand{\membroB}{Nome Completo do Membro (2)}
+\newcommand{\membroC}{Nome Completo do Membro (3)}
+
+\newcommand{\nota}{99.99}
+\newcommand{\dataentrega}{99/99/9999}
+
+%ATE AQUI!!! DEPOIS SOMENTE OS ITENS REALIZADOS.
+
+\begin{document}
+	
+	
+	\mdseries \normalsize
+	\begin{center}
+		{\textbf{\cabecalho}}\\
+		\vspace{0.1cm}
+		\textbf{\cursoA}
+	\end{center}
+	
+	\noindent A(os) \textbf{\dia} dia(s) do mês \textbf{\mes} de \textbf{\ano}, às \textbf{\hora} horas e  \textbf{\minutos} minutos, sito à Av. Major Fernando Valle, 2013, Bairro São Miguel, \cidade - SP, deste \instituicao, reuniu-se em sessão pública, por meio de videoconferência, a Banca Examinadora do Trabalho de Conclusão do Curso (TCC) de \curso  desenvolvido pelo(s) estudante(s): 
+	\textbf{\prontuarioA  \hspace{0.01cm} - \alunoA, \prontuarioB  \hspace{0.01cm} - \alunoB,  \prontuarioC  \hspace{0.01cm} - \alunoC}, sob o título: \textbf{\tema}. \vspace{0.2cm} \\
+	\noindent Integraram a Banca Examinadora:\vspace{2pt}\\
+	\noindent Membro 1. \textbf{\membroA} (Presidente). \vspace{2pt}\\
+	\noindent Membro 2. \textbf{\membroB}.\vspace{2pt} \\
+	\noindent Membro 3. \textbf{\membroC}. \vspace{0.3cm} \\
+	\noindent A Banca Examinadora, tendo decidido aceitar o Trabalho de Conclusão de Curso, passou à arguição pública do(s) estudante(s). \vspace{0.3cm}\\
+    \noindent Encerrados os trabalhos, os membros da Banca Examinadora deram o parecer final sobre a defesa. \vspace{0.2cm} \\
+    \noindent \textbf{Parecer:} em conclusão, o(s) referido(s) estudante(s) foi(foram) considerado(s): \\
+    \noindent ( \textbf{x} ) aprovado(s) com a nota \textbf{\nota}, devendo apresentar a versão final corrigida ao orientador e enviar a(o) Coordenador(a) de Curso, segundo alterações sugeridas pelos membros da Banca Examinadora até \textbf{\dataentrega}. \\
+    \noindent Estará(ão) automaticamente reprovado(s) o(s) estudantes(s) que não entregar(em) a versão final do trabalho corrigida até a data estabelecida, de acordo com a Seção V, Artigo 17\textdegree, alínea "o" do Regulamento do Trabalho de Conclusão do Curso de \curso.
+    \vspace{0.2cm} \\
+    \noindent ( \textbf{x} ) reprovado(s), estando vedada apresentação de novo TCC, qualquer que seja a alegação, no semestre da reprovação, de acordo com a Seção V, Artigo 13\textdegree.
+	\vspace{0.2cm} \\
+	\noindent Para constar, eu, Profa. Dra. Letícia Souza Netto Brandi, Coordenador(a) do referido curso, lavrei a presente Ata que assino juntamente com os membros da Banca Examinadora.
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{C{7cm} C{2cm} C{7cm}}
+	       \\
+	       \cline{1-1} \cline{3-3} 	\footnotesize{\membroAD}  &  & \footnotesize{\membroBD}
+	       \\
+	        \footnotesize{IFSP - \campus} & &  \footnotesize{IFSP - \campus} 
+			\\     &    &   
+			\\     &    &  
+			\\ \cline{1-1} \cline{3-3} \centering \footnotesize{\membroCD} &  &  \footnotesize{Aluno:} \footnotesize{\alunoA} 
+			\\  \footnotesize{IFSP - \campus}   &    &  \footnotesize{Prontuário:}  \footnotesize{\prontuarioA} \\
+			\\ &  &                      \\ \cline{1-1} \cline{3-3} 
+			 \footnotesize{Aluno:} \footnotesize{\alunoB}   &  &  \footnotesize{Aluno:} \footnotesize{\alunoC}
+			\\ \footnotesize{Prontuário:}  \footnotesize{\prontuarioB}   &    &  \footnotesize{Prontuário:}  \footnotesize{\prontuarioC}
+		\end{tabular}
+		\vspace{.9cm}
+		\\
+		\rule{14cm}{0.1pt}               
+		\\ \footnotesize{Coordenador(a) do Curso \curso} 
+		\\ \footnotesize{IFSP - \campus} 
+	
+	\end{table}
+
+\end{document}

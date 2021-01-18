@@ -1,0 +1,368 @@
+% Desenvolvido por: Prof. Dr. David Buzatto
+%
+% Baseado na documentação do abntex2 e nos modelos em
+% Microsoft Word propostos pela Profa. Dra. Rosana F. L. Rodrigues
+% e pela bibliotecária M.Sc. Maria Carolina Gonçalves do câmpus
+% São João da Boa Vista do IFSP.
+%
+% Versão 1.51
+% Data: 06/11/2018
+% Modelo adaptado para IFSP-BRA por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{naturalnames}{hyperref}
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em verso e anverso. Oposto a oneside, twoside
+	a4paper,			% tamanho do papel. 
+	%normalfigtabnum,
+	%pnumromarab,
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+]{abntex2}
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
+\renewcommand{\familydefault}{\sfdefault} % define como default.
+%\usepackage{lmodern}			% Usa a fonte Latin Modern		
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color, xcolor, colortbl}	% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{hyperref}
+\usepackage{subfig}
+\usepackage{epigraph}
+\usepackage{placeins}
+\usepackage{multirow}
+\usepackage[figuresright]{rotating}
+\usepackage{chemfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{bigints}
+\usepackage{listings}
+\usepackage{etoolbox}
+\usepackage[final]{pdfpages} % inserir pdf
+\usepackage{bigstrut}
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Reconfiguração o tamanho da fonte dos capítulos
+% ---
+\captionstyle{\raggedright} % (para as legendas; use \legend para fonte)
+% Fontes padrao de part, chapter, section, subsection e subsubsection
+\renewcommand{\ABNTEXchapterfontsize}{\bfseries\Large}
+\renewcommand{\ABNTEXpartfont}{\ABNTEXchapterfont}
+\renewcommand{\ABNTEXpartfontsize}{\ABNTEXchapterfontsize}
+\renewcommand{\ABNTEXsectionfont}{\ABNTEXchapterfont}
+\renewcommand{\ABNTEXsectionfontsize}{\bfseries\large}
+\renewcommand{\ABNTEXsubsectionfont}{\ABNTEXsectionfont}
+\renewcommand{\ABNTEXsubsectionfontsize}{\large}
+\renewcommand{\ABNTEXsubsubsectionfont}{\ABNTEXsubsectionfont}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\large}
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\ABNTEXsubsectionfont}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\large}
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf,abnt-emphasize=bf,abnt-etal-text=emph]{abntex2cite}  % Citações padrão ABNT
+\usepackage{url6023} % Adequado para atender a norma ABNT 6023:2018 por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
+% ---
+% Listagens
+% ---
+\definecolor{corComentario}{RGB}{150,150,150}
+\definecolor{corString}{RGB}{206,123,0}
+\definecolor{corPalavraChave}{RGB}{0,0,230}
+\lstset{
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	numberstyle=\footnotesize,
+	extendedchars=true,
+	breaklines=true,
+	lineskip=0pt,
+	frame=tb,
+	basicstyle=\ttfamily\footnotesize,
+	showstringspaces=false,
+	stringstyle=\color{corString},
+	commentstyle=\color{corComentario},
+	keywordstyle=\color{corPalavraChave}
+}
+
+% ---
+% Definições de variáveis do documento
+% ---
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+% Ano
+\newcommand{\ano}[1]{\def \oano {#1}}
+\newcommand{\imprimirano}{\oano}
+% Mês
+\newcommand{\mes}[1]{\def \omes {#1}}
+\newcommand{\imprimirmes}{\omes}
+% Subtítulo
+\newcommand{\subtitulo}[1]{\def \osubtitulo {#1}}
+\newcommand{\imprimirsubtitulo}{\osubtitulo}
+% Área de Atuação
+\newcommand{\area}[1]{\def \aarea {#1}}
+\newcommand{\imprimirarea}{\aarea}
+% Coorientador
+\renewcommand{\coorientador}[1]{\def \ocoorientador {#1}}
+\renewcommand{\imprimircoorientador}{\ocoorientador}
+% Grau
+\newcommand{\grau}[1]{\def \ograu {#1}}
+\newcommand{\imprimirgrau}{\ograu}
+% Curso
+\newcommand{\curso}[1]{\def \ocurso {#1}}
+\newcommand{\imprimircurso}{\ocurso}
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\ano{ANO}
+\mes{MÊS}
+\local{Bragança Paulista}
+\area{Computação}
+% ---
+% Informações do Curso, grau, coorientador, orientador
+% ---
+\orientador{Prof./Profa. Me./MsC. /Dr./Dra. Nome Completo}
+% caso não haja coorientador, comente a linha abaixo
+\coorientador{Prof./Profa. Me./MsC./Dr./Dra. Nome Completo}
+\grau{Tecnólogo em Análise e Desenvolvimento de Sistemas}
+\curso{Tecnologia em Análise e Desenvolvimento de Sistemas}
+% ---
+% Informações do Título e subtítulo
+% ---
+\titulo{Título }
+% caso não haja subtítulo, comente a linha abaixo usando o percentual na frente
+\subtitulo{subtítulo (se houver, caso não exista, comente a linha com o percentual na frente)}
+\tipotrabalho{Trabalho de Conclusão de Curso}
+% --- 
+% Informações dos autores e instituição
+% ---
+\autor{Seu Nome Completo}
+\instituicao{Instituto Federal de Educação, Ciência e Tecnologia de São Paulo\\Câmpus Bragança Paulista}
+% --- 
+% Criando o preambulo
+% ---
+\preambulo{\imprimirtipotrabalho\ apresentado ao Instituto Federal de Educação, Ciência e Tecnologia de São Paulo, como parte dos requisitos para a obtenção do título de \imprimirgrau.
+\\
+Área de Concentração: \imprimirarea}
+% ---
+% ---
+% Configurações de aparência do PDF final
+% ---
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={\@author},
+	pdfsubject={\imprimirpreambulo},
+	pdfcreator={Nome Completo},
+	pdfkeywords={Palavra chave 1}{Palavra chave 2}{Palavra chave 3}{Palavra chave n}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=black,          	% color of internal links
+	citecolor=black,       		% color of links to bibliography
+	filecolor=black,      		% color of file links
+	urlcolor=black,
+	bookmarksdepth=4
+}
+\makeatother
+% ---
+% Comandos do autor
+% ---
+% comando para inserir autor e ano
+\newcommand{\citeauthorandyear}[1]{\citeauthoronline{#1} (\citeyear{#1})}
+% ---
+% Novo list of (listings) para Quadros
+% ---
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{quadro}{loq}{0}
+% ---
+% configurações para atender às regras da ABNT
+% ---
+\setfloatadjustment{quadro}{\centering}
+\counterwithout{quadro}{chapter}
+\renewcommand{\cftquadroname}{\quadroname\space} 
+\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+% ---
+% Configuração de posicionamento padrão:
+% ---
+\setfloatlocations{quadro}{hbtp}
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+% ---------------------------------------------------------------------------------
+%                                   INÍCIO DO DOCUMENTO
+% ---------------------------------------------------------------------------------
+\begin{document}
+\selectlanguage{brazil}
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+% --- 
+% Elementos Pré Textuais 
+% ---
+% \pretextual
+% ---
+% Capa
+% ---
+%\imprimircapa
+\input{pre01Capa}
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+%\imprimirfolhaderosto*
+\input{pre02FolhaDeRosto}
+
+% ---
+% Inserir a ficha catalográfica
+% ---
+\input{pre03FichaCatalografica}
+
+% ---
+% Inserir folha de aprovação
+% ---
+\input{pre04FolhaDeAprovacao}
+
+% ---
+% Dedicatória
+% ---
+\input{pre05Dedicatoria}
+
+% ---
+% Agradecimentos
+% ---
+\input{pre06Agradecimentos}
+
+% ---
+% Epígrafe
+% ---
+\input{pre07Epigrafe}
+
+% ---
+% Resumos
+% ---
+\input{pre08Resumo}
+\input{pre09Abstract}
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+% ---
+% inserir lista de quadros
+% ---
+\pdfbookmark[0]{\listofquadrosname}{loq}
+\listofquadros*
+\cleardoublepage
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\input{pre10ListaSiglas}
+
+% ---
+% inserir lista de símbolos
+% ---
+\input{pre11ListaSimbolos}
+
+% ---
+% inserir o sumário
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% --- 
+% Elementos Textuais 
+% ---
+\textual
+\input{capitulo01Introducao}
+\input{capitulo02RevisaoLiteratura}
+\input{capitulo03Metodologia}
+\input{capitulo04ResultadosDiscussao}
+\input{capitulo05Conclusoes}
+\input{capitulo06Cronograma}
+
+% --- 
+% Elementos Pós Textuais 
+% ---
+\postextual
+
+% ---
+% Referências bibliográficas
+% ---
+\bibliography{referencias}
+
+% ---
+% Glossário
+% ---
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%\glossary
+
+% ---
+% Apêndices
+% ---
+\input{pos01Apendices}
+
+% ---
+% Anexos
+% ---
+\input{pos02Anexos}
+
+%---
+% ÍNDICE REMISSIVO
+%---
+%\phantompart
+%\printindex
+
+% --- 
+% Fim do Documento
+% ---
+\end{document}

@@ -1,0 +1,142 @@
+%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade XXXX
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is SEU_NOME, SEU_EMAIL
+%%
+%% Further information about abnTeX2 are available on https://github.com/abntex/abntex2
+%%
+
+% Adaptado para IFSP-BRA por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
+% ---
+% INICIO DAS CUSTOMIZACOES PARA A UNIVERSIDADE XXX
+% ---
+
+\ProvidesPackage{capa}[2014/09/01 Criacao desta customizacao do abnTeX2]
+
+% alterando a capa
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+    \center
+    \includegraphics[width=70mm]{imagens/IFSP-BRA.png}\\[0.2cm]
+    \ABNTEXchapterfont\Large Instituto Federal de Educação, Ciência e Tecnologia de São Paulo\\
+    \ABNTEXchapterfont\large Campus Bragança Paulista\\
+ %   \ABNTEXchapterfont\large Informática\\[2cm]
+    
+    \vspace*{2cm}
+    {\ABNTEXchapterfont\bfseries\Large\imprimirtitulo}\\[1cm]
+    
+
+%    \vfill
+ \vspace*{2cm}
+    \begin{center}
+    \large\textbf{Composição do grupo de Trabalho}
+   % \ABNTEXchapterfont\large\imprimirautor\\[0.5cm]
+     \begin{center}
+		\begin{tabular}{|m{0.5cm}|m{4cm}|m{10cm}|}
+			\hline
+			\textbf{no.} & \textbf{Prontuário} & \textbf{Nome do aluno} \\
+			\hline
+			\textbf{1} & \textit{BP999999} & \textit{Nome completo do aluno 1}\\
+			\hline
+			\textbf{2} & \textit{BP999999} & \textit{Nome completo do aluno 2}\\
+			\hline
+			\textbf{3} & \textit{BP999999} & \textit{Nome completo do aluno 3}\\
+			\hline
+		\end{tabular}
+	\end{center}
+
+ %\ABNTEXchapterfont\large \textbf{Área de concentração:} Sua área\\%area de concentracao
+ %\ABNTEXchapterfont\large \textbf{Linha de pesquisa:} Sua linha\\%linha de pesquisa
+ %\ABNTEXchapterfont\large \textbf{Tema:} Seu tema\\[2cm]%tema
+ %\ABNTEXchapterfont\large Orientador\\
+ %\ABNTEXchapterfont\large\imprimirorientador\\[0.5cm]
+ %\ABNTEXchapterfont\large Coorientador\\
+ %\ABNTEXchapterfont\large\imprimircoorientador
+  \begin{center}
+   \large\textbf{Professor(es) orientador(es) }
+		\begin{tabular}{|m{5cm}|m{10cm}|}
+			\hline
+			\textbf{Orientador} & \textit{Nome do prof. orientador} \\
+			\hline
+			\textbf{Coorientador} & \textit{Nome do prof. coorientador} \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	
+ 
+    \end{center}
+    \vfill
+    
+    \large\imprimirlocal
+
+    \large\imprimirdata
+    
+    \vspace*{1cm}
+  \end{capa}
+}
+
+
+% folha de rosto 
+
+\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+\begin{center}
+{\ABNTEXchapterfont\Large UNIVERSIDADE QUE TORNA OS DOCUMENTOS AINDA MAIS ESTRANHOS}
+    
+    \vspace*{1cm}
+    
+{\ABNTEXchapterfont\large\imprimirautor}
+
+\vspace*{\fill}\vspace*{\fill}
+
+\begin{center}
+\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+\end{center}
+
+\vspace*{\fill}
+
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.45\textwidth}
+  \begin{minipage}{.5\textwidth}
+  \SingleSpacing
+  \imprimirpreambulo
+  \end{minipage}%
+  \vspace*{\fill}
+}%
+
+{\large\imprimirorientadorRotulo~\imprimirorientador\par}
+
+\abntex@ifnotempty{\imprimircoorientador}{%
+  {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+}%
+
+\vspace*{\fill}
+
+{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+
+{\large\imprimirlocal}
+
+\par
+
+{\large\imprimirdata}
+\vspace*{1cm}
+\end{center}
+}
+
+\makeatother
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA A UNIVERSIDADE XXX
+% ---
