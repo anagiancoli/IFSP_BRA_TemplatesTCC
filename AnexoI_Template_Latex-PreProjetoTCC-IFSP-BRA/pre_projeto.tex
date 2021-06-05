@@ -1,170 +1,274 @@
 % Adaptado para IFSP-BRA por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
-%\renewcommand{\headrulewidth}{0pt} % retirando linha
-%\renewcommand{\footrulewidth}{1pt} % colocando linha
 
-%%%%%classe do documento%%%%%
-\documentclass[article,12pt, a4paper]{abntex2}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
-\renewcommand{\familydefault}{\sfdefault} % define como default.
-%\usepackage{lmodern}			% Usa a fonte Latin Modern		
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+% -- Classe Documento
+\documentclass[
+	% -- opções da classe memoir --
+	hidelinks,
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em verso e anverso. Oposto a oneside, twoside
+	a4paper,			% tamanho do papel. 
+	%normalfigtabnum,
+	%pnumromarab,
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+]{abntex2}
 
-%%%%%%%Pacotes%%%%%%%%%%%%%%
-%\usepackage{lmodern}	
-%\usepackage[utf8]{inputenc}
-\usepackage[brazil]{babel}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+% --
+\usepackage[document]{ragged2e}
+% ---
+% Pacotes básicos 
+% ---
+% Usa a fonte Helvet que é parecida com Arial
+\usepackage{helvet} 
+% define como default.
+\renewcommand{\familydefault}{\sfdefault} 
+% Selecao de codigos de fonte.
+\usepackage[T1]{fontenc}	
+% Codificacao do documento (conversão automática dos acentos)
+\usepackage[utf8]{inputenc}	
+% Usado pela Ficha catalográfica
+\usepackage{lastpage}	
+% Indenta o primeiro parágrafo de cada seção.
+\usepackage{indentfirst}		
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
 \usepackage{float}
-\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf,abnt-emphasize=bf]{abntex2cite}
-%\citebrackets[]
-\usepackage{indentfirst}
 \usepackage{lipsum}
-\usepackage{cmap}
-\usepackage{capa}
-\usepackage{fancyhdr}
-\usepackage{fancybox} % Adicionado para criar uma moldura ao redor da página
-\fancypage{\setlength{\fboxsep}{12pt}\fbox}{} % incluído a moldura da página
+\usepackage{tabularx}
+\captionstyle{\center} %(para as legendas; use \legend para fonte)
+\usepackage{caption}
 
-%%%%%%%%%%%%%%%%% cor das referências %%%%%%%%%%%%%%%%%
-\hypersetup{
-		colorlinks=true,       		% false: boxed links; true: colored links
-		linkcolor=blue,        		% color of internal links
-		citecolor=blue,        		% color of links to bibliography
-		filecolor=magenta,     		% color of file links
-		urlcolor=blue}
+\usepackage{hyperref}
 
-\IfFileExists{html.sty}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{url6023} % Adequado para atender a norma ABNT 6023:2018 por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
-
-
-%%%%%%%%%%%%% Linhas para Inserir o programa %%%%%%%%%%%%%%%%%%%%%
-%Para trocar os dados da capa basta ir no arquivo capa.sty,alterando
-%as seguintes linhas:
-
-%41- \ABNTEXchapterfont\large \textbf{Área de concentração:} Sua Área de Concentração\\%area de concentracao
-
-%42- \ABNTEXchapterfont\large \textbf{Linha de pesquisa:} Sua linha de pesquisa\\%linha de pesquisa
-
-%43-  \ABNTEXchapterfont\large \textbf{Tema:} Seu tema\\%tema 
-
-%O arquivo está dentro do projeto
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ---
+% Pacotes de citações
+% ---
+% Paginas com as citações na bibl
+\usepackage[brazilian,hyperpageref]{backref}
+% Citações padrão ABNT
+\usepackage[alf,abnt-emphasize=bf,abnt-etal-text=emph]{abntex2cite}  
+% Adequado para atender a norma ABNT 6023:2018 por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
+\usepackage{url6023} 
 
 
 
-%%%%%%%%%%%%% tirando a impressão frente e verso  %%%%%%%%%%%%%%
-\setboolean{@twoside}{false}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- 
+% Pacote para moldura
+% --
+% Adicionado para criar uma moldura ao redor da página
+\usepackage{fancybox} 
+% incluído a moldura da página
+\fancypage{\setlength{\fboxsep}{12pt}\fbox}{} 
+\usepackage{wrapfig}
 
-%%%%%%%%%%%%%%%%%%%% Dados gerais %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titulo{ANEXO I\\Proposta de Trabalho de Conclusão de Curso (TCC)}
-\autor{Prontuário: BPXXXXXX - Autor 1\\Prontuário: BPXXXXXX - Autor 2\\Prontuário: BPXXXXXX - Autor 3}
-\local{Bragança Paulista}
-\data{Ano}
-\orientador{Prof. Dr(a)./MsC./Me. Orientador(a)}
-\coorientador{Prof. Dr(a)./MsC./Me. Orientador(a)}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%--
+
+% comando para inserir autor e ano
+\newcommand{\citeauthorandyear}[1]{\citeauthoronline{#1} (\citeyear{#1})}
+\renewcommand{\ABNTEXchapterfontsize}{\bfseries\large}
+% https://www.tablesgenerator.com/
+
+\usepackage{float}
+\floatstyle{plaintop} % Coloca caption no topo
+\newfloat{quadro}{htbp}{lop}
+\floatname{quadro}{Quadro}
+\newcommand{\listofquadros}{\listof{quadro}{Lista de Quadros}}
+\renewcommand{\baselinestretch}{1.5}
+
+% --
+% Orientador e coorientador
+% --
+
+\newcommand{\orient}[1]{\def \oorient {#1}}
+\newcommand{\imprimirorient}{\oorient}
+
+\newcommand{\coorient}[1]{\def \ocoorient {#1}}
+\newcommand{\imprimircoorient}{\ocoorient}
+
+\orient{Nome do Orientador com o título}
+\coorient{-}
+% --
+% Autores
+% --
+\newcommand{\autorA}[1]{\def \oautorA {#1}}
+\newcommand{\imprimirautorA}{\oautorA}
+\newcommand{\prontuarioA}[1]{\def \oprontuarioA {#1}}
+\newcommand{\imprimirprontuarioA}{\oprontuarioA}
+
+\newcommand{\autorB}[1]{\def \oautorB {#1}}
+\newcommand{\imprimirautorB}{\oautorB}
+\newcommand{\prontuarioB}[1]{\def \oprontuarioB {#1}}
+\newcommand{\imprimirprontuarioB}{\oprontuarioB}
+
+\newcommand{\autorC}[1]{\def \oautorC {#1}}
+\newcommand{\imprimirautorC}{\oautorC}
+\newcommand{\prontuarioC}[1]{\def \oprontuarioC {#1}}
+\newcommand{\imprimirprontuarioC}{\oprontuarioC}
+
+\prontuarioA{BP9999999}
+\autorA{Nome do autor A}
+
+\prontuarioB{BP9999999}
+\autorB{Nome do autor B}
+
+\prontuarioC{BP9999999}
+\autorC{Nome do autor C}
+
+% ----
+
+% --
+% Inicio do Documento
+% --
 
 \begin{document}
-
-%begin{titlepage}
-	
-%	\begin{center}
-%		\includegraphics[width=70mm]{imagens/unb_bandeira.png}\\[0.2cm]
-%		{\large Universidade de Brasília\\}
-%		Faculdade de Tecnologia\\
-%		Departamento de Engenharia Elétrica\\[2cm]
-%		{\large \textbf{Pré-Projeto de Dissertação(Mestrado Acadêmico)}}\\[2cm]
-%		{\large
-%			Helton Alves de Azevedo\\[1cm]
-%			\textbf{Área de concentração:} Sistemas Eletrônicos\\
-%			\textbf{Linha de pesquisa:} Microeletrônica\\[0.5cm]
-%			\textbf{Tema:} Construção e Estudo de Viabilidade de um Transceptor para o Padrão Ingenu RPMA Utilizando Circuitos Baseandos em CNTFETs e MOSFETs\\[2cm]
-%			Orientador\\
-%			Prof. Dr. Sandro Augusto Pavlik Haddad\\[0.5cm]
-%			Brasília\\
-%			2019\\
-%			
-%			}
-%	\end{center}
-%\end{titlepage}
-
-\imprimircapa
+\selectlanguage{brazil}
+\thispagestyle{empty} % remove a numeração desta página
 \textual
 
-%\thisfancypage{\setlength{\fboxsep}{12pt}\fbox}{} % incluído a moldura da página
-\section{Título e Proposta do Projeto}
+\begin{wrapfigure}[2]{l}{0.30\textwidth}
+\includegraphics[scale=.35]{imagens/IFSP-BRA.png} 
+\end{wrapfigure}
 
-\subsection{Título do Projeto}
-%\textbf{Indique aqui seu título / tema}
-\begin{tabular}{|m{15cm}|}
-			\hline
-			\textbf{Indique o título do projeto aqui} \\
-			\hline
-		\end{tabular}
-\input{includes/introducao}
+\centering
+\footnotesize\textbf{Tecnologia em Análise e Desenvolvimento de Sistemas} \\	\footnotesize\textbf{Metodologia de Pesquisa Científica e tecnológica - MPCI4}\\
 
-\subsection{Problema de pesquisa}
-Neste item indique o problema a ser pesquisado. Pergunta.
+\titulo{Proposta de Trabalho de Conclusão de Curso (TCC)}
+\begin{center}
+\vspace{1cm}
+    \normalsize \textbf{\imprimirtitulo}
+\end{center}
+			
+\begin{flushleft}
+    \small \textbf{1. COMPOSIÇÃO DO GRUPO DE TRABALHO}
+\end{flushleft}
+\begin{center}
+	\begin{tabular}{|m{0.5cm}|m{4cm}|m{10cm}|}
+		\hline 
+	    \textbf{n$^o$.} & \multicolumn{2}{c|}{\textbf{Nome do aluno}} \\
+		\hline
+		\textbf{1} & \textit{\imprimirprontuarioA} & \textit{\imprimirautorA}\\
+		\hline
+		\textbf{2} & \textit{\imprimirprontuarioB} & \textit{\imprimirautorB}\\
+		\hline
+		\textbf{3} & \textit{\imprimirprontuarioC} & \textit{\imprimirautorC}\\
+		\hline
+	\end{tabular}
+\end{center}
+	
+\begin{flushleft}
+   \small \textbf{1.1. PROFESSOR(ES) ORIENTADOR(ES) }
+\end{flushleft}
 
+\begin{center}
+	\begin{tabular}{|m{5cm}|m{10cm}|}
+	    \hline 
+	    \multicolumn{2}{|c|}{\textbf{Nome}} \\
+		\hline
+		\textbf{Orientador} & \textit{\imprimirorient} \\
+		\hline
+		\textbf{Coorientador} & \textit{\imprimircoorient} \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{flushleft}
+   \normalsize\textbf{2.TÍTULO E PROPOSTA DO PROJETO}
+\end{flushleft}
+
+\begin{flushleft}
+   \small \textbf{Título do Projeto:}
+\end{flushleft} 
+\normalsize
+Título do meu projeto\\
+
+\begin{flushleft}
+\textbf{Problema de pesquisa (pergunta):}
+\end{flushleft} 
+\input{includes/problemapesquisa}
+
+\begin{flushleft}
+\textbf{Justificativa (relevância do estudo):}
+\end{flushleft} 
 \input{includes/justificativa}
-\input{includes/objetivos}
+
+\begin{flushleft}
+\textbf{Objetivo Geral:}
+\end{flushleft} 
+
+
+\justify
+
+\hspace{0.5cm} O objetivo Geral é ...
+
+\begin{flushleft}
+\textbf{Objetivos Específicos:}
+\end{flushleft} 
+\input{includes/objetivosespec}
+
+\begin{justify}
+\textbf{Método de Pesquisa (definição da linha metodológica coerente com o problema:}
+\end{justify} 
 \input{includes/metodo}
+
+\begin{justify}
+\textbf{Metodologia do Desenvolvimento do Sistema (descrição do processo de desenvolvimento, objeto de estudo, tecnologias, requisitos, ferramentas e procedimentos de elaboração e de análise do sistema):}
+\end{justify} 
 \input{includes/metodologia}
 
-\subsection{Resultados esperados}
-Descrever ...
+\begin{flushleft}
+\textbf{Resultados esperados:}
+\end{flushleft} 
+\input{includes/resultados}
 
+\begin{flushleft}
+\textbf{Cronograma (considerar o 5$^o$. e 6$^o$. módulos:}
+\end{flushleft} 
 \input{includes/cronograma}
-%\thisfancypage{\setlength{\fboxsep}{12pt}\fbox}{} % incluído a moldura da página
-
-	% ----------------------------------------------------------
-	% ELEMENTOS PÓS-TEXTUAIS
-	% ----------------------------------------------------------
-    \newpage
-  %  \thisfancypage{\setlength{\fboxsep}{12pt}\fbox}{}
-
-    \bibliography{referencias}
-\vspace{5cm}
 
 
-    \begin{center}
-		\begin{tabular}{|m{5cm}|m{10cm}|}
-			\hline
-			\textbf{Alunos} & \textbf{Assinatura} \\
-			\hline
-			\textit{Nome do Autor 1} & \\
-			\hline
-			\textit{Nome do Autor 2} & \\
-			\hline
-			\textit{Nome do Autor 3} & \\
-			\hline
-		\end{tabular}
-	\end{center}
+\bibliography{referencias}
+\vspace{1cm}
+
+\begin{center}
+	\begin{tabular}{|m{10cm}|m{5cm}|}
+		\hline
+		\textbf{Alunos} & \textbf{Assinatura} \\
+		\hline
+		 \textit{\imprimirprontuarioA - \imprimirautorA} &  \\
+		\hline
+		\textit{\imprimirprontuarioB - \imprimirautorB} &  \\
+		\hline
+		\textit{\imprimirprontuarioC - \imprimirautorC} & \\
+		\hline
+	\end{tabular}
+\end{center}
 
 \vspace{0.5cm}
 
-	\begin{center}
-		\begin{tabular}{|m{5cm}|m{10cm}|}
-			\hline
-			\textbf{Orientador(es)} & \textbf{Assinatura} \\
-			\hline
-			\textit{Nome do Orientador 1} & \\
-			\hline
-			\textit{Nome do Coorientador 1} & Se não tiver, comentar a linha com percentual na frente e no hline seguinte também.\\
-			\hline
-		\end{tabular}
-	\end{center}
-
-\input{includes/apendices} %incluído somente com exemplos. Deve ser desconsiderado no documento final. Para isso, basta inserir um percentual na frente do \input. Igual foi feito em anexos.
-
-%\input{includes/anexos}
+\begin{center}
+	\begin{tabular}{|m{10cm}|m{5cm}|}
+		\hline
+		\textbf{Orientador(es)} & \textbf{Assinatura} \\
+		\hline
+		\textit{\imprimirorient} & \\
+		\hline
+		\textit{\imprimircoorient} & \\
+		\hline
+	\end{tabular}
+\end{center}
 
 \end{document}
 
