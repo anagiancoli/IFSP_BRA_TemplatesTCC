@@ -2,30 +2,21 @@
 % Imprimir para usar, ou modificar no layout antes de imprimir.
 
 \documentclass[12pt,a4paper]{report}
-
-\mdseries \large
-
-
 \pagestyle{empty}
+\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
+\renewcommand{\familydefault}{\sfdefault} % define como default.
 
+
+\usepackage[utf8]{inputenc}
 \usepackage[brazilian]{babel}
 \usepackage{gensymb} % para usar simbolo de graus
 \usepackage{textcomp}  % para usar simbolo de graus\textdregree
 \usepackage{graphics}
 \usepackage{graphicx,url}
 \usepackage[top=1cm, bottom=1cm, left=2cm, right=2cm]{geometry}
-\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
-\renewcommand{\familydefault}{\sfdefault} % define como default.
-%\usepackage{lmodern}			% Usa a fonte Latin Modern		
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-
 \usepackage{setspace} % espacamento entre linhas
-
 % padrao 1.5 de espacamento entre linhas
 \setstretch{1.5}
-
-
 \usepackage{array}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 %

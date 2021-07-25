@@ -3,23 +3,23 @@
 
 \documentclass[12pt,a4paper]{report}
 \pagestyle{empty}
+\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
+\renewcommand{\familydefault}{\sfdefault} % define como default.
 
+
+\usepackage[utf8]{inputenc}
 \usepackage[brazilian]{babel}
 \usepackage{gensymb} % para usar simbolo de graus
 \usepackage{textcomp}  % para usar simbolo de graus\textdregree
 \usepackage{graphics}
 \usepackage{graphicx,url}
 \usepackage[top=1cm, bottom=1cm, left=2cm, right=2cm]{geometry}
-\usepackage{helvet} % Usa a fonte Helvet que é parecida com Arial
-\renewcommand{\familydefault}{\sfdefault} % define como default.
-%\usepackage{lmodern}			% Usa a fonte Latin Modern		
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-
 \usepackage{setspace} % espacamento entre linhas
-
 % padrao 1.5 de espacamento entre linhas
 \setstretch{1.5}
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%
 
 \usepackage{array}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -27,14 +27,14 @@
 %
 \newcommand{\cabecalho}{ANEXO V - TERMO DE DESISTÊNCIA DE ORIENTAÇÃO / COORIENTAÇÃO DE TCC}
 \begin{document}
-	\includegraphics[scale=0.35]{IFSP-BRA.png}	\hline
+	\includegraphics[scale=0.35]{IFSP-BRA.png}	
 \vspace{1.2cm}
 	\begin{center}
 		{\large\textbf{\cabecalho}}\\
 	\end{center}
 	
 	\vspace{1.2cm}
-	\noindent \large{Eu, \rule{12cm}{0.1pt}, comunico que, a partir desta data, não serei mais o responsável pela (\hspace{0.4cm} ) orientação / ( \hspace{0.4cm} ) coorientação do TCC do(a) aluno(a) \rule{9.5cm}{0.1pt} \rule{9.5cm}{0.1pt}, matriculado(a) no Curso de Tecnologia em Análise e Desenvolvimento de Sistemas no Campus Bragança Paulista do IFSP, neste período letivo de 20\rule{1cm}{0.1pt} \hspace{0.01cm}/\rule{1cm}{0.1pt} \hspace{0.01cm}.} \\
+	\noindent Eu, \rule{12cm}{0.1pt}, comunico que, a partir desta data, não serei mais o responsável pela (\hspace{0.4cm} ) orientação / ( \hspace{0.4cm} ) coorientação do TCC do(a) aluno(a) \rule{9.5cm}{0.1pt} \rule{9.5cm}{0.1pt}, matriculado(a) no Curso de Tecnologia em Análise e Desenvolvimento de Sistemas no Campus Bragança Paulista do IFSP, neste período letivo de 20\rule{1cm}{0.1pt} \hspace{0.01cm}/\rule{1cm}{0.1pt} \hspace{0.01cm}. \\
 	\\
 	\noindent \textbf{Justificativa da desistência:} \rule{10cm}{0.1pt} \\
 	\rule{17cm}{0.1pt} \\
@@ -52,9 +52,10 @@
 		\\ \small{(Assinatura)}
 	\end{table}
 
-    \vspace{3cm}
-	\hline 
+    \vspace{6cm}
+	\hline
 	\vspace{0.2cm}
+
 	\centering \tiny{IFSP - Campus Bragança Paulista – bra.ifsp.edu.br – Fone: (0xx11) 4034–7800.
 Av. Major Fernando Valle, 2013 – São Miguel – Bragança Paulista – SP, Brasil – CEP 12903–000}
 \end{document}

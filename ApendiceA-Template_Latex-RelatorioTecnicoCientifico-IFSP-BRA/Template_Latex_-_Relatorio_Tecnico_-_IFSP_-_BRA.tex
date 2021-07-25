@@ -18,7 +18,7 @@
 	%normalfigtabnum,
 	%pnumromarab,
 	% -- opções da classe abntex2 --
-	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
 	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
 	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
@@ -152,7 +152,6 @@
 %\curso{Especialização em Desenvolvimento de Aplicações para Dispositivos Móveis}
 %\grau{Especialista em Desenvolvimento de Aplicações para Dispositivos Móveis}
 
-\titulo{Indique aqui seu Titulo do Relatorio}
 
 % caso não haja subtítulo, comente a linha abaixo
 \subtitulo{subtítulo (se houver)}
@@ -161,6 +160,10 @@
 %\tipotrabalho{Relatório Técnico-Científico de Estágio}
 %\tipotrabalho{Relatório Técnico-Científico de Atuação Profissional}
 \area{Indique aqui a Área de Concentração do Trabalho}
+
+\titulo{\imprimirtipotrabalho}
+%\titulo{Indique aqui seu Titulo do Relatorio}
+
 
 \autor{Nome Completo}
 \orientador{Prof./Profa. Me./Dr./Dra. Nome Completo}
@@ -300,7 +303,15 @@
 \cleardoublepage
 \input{05Resumo}
 
+
 \cleardoublepage
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
 
 % ---
 % inserir o sumário
@@ -323,8 +334,5 @@
 % ----------------------------------------------------------
 \postextual
 \bibliography{referencias}
-
-\cleardoublepage
-\input{folhaaprovacao}
 
 \end{document}
