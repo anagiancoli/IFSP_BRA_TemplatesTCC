@@ -6,7 +6,7 @@
 
 - ⛓️ **Regulamento de TCC**: Templates lateX adequados para IFSP-BRA.
 
-- 📖 Para utilizá-los, basta baixá-los e utilizar um editor para lateX ou mesmo efetuar o upload do arquivo .zip para a plataforma online Overleaf para utilizá-los. 
+- 📖 Para utilizá-los, basta baixá-los, selecionando **View project on GitHub**. E utilizar um editor para lateX ou mesmo efetuar o upload do arquivo .zip para a plataforma online Overleaf para utilizá-los. 
 
 - 📤 Qualquer eventual dúvida, entre em contato por e-mail: _paulagiancoli@ifsp.edu.br_.
 
@@ -17,11 +17,9 @@
 <div align="right">
 Bons estudos! 👋 
 </div>
-
-  ##
   
 <div>
   Profa. Ana Paula Müller Giancoli
-  <a href="https://anagiancoli.github.io"><img align="center" alt="Ana-Github" height="30" width="40" src='https://github.com/devicons/devicon/blob/master/icons/github/github-original-wordmark.svg'></a>
+  
 </div>
   
