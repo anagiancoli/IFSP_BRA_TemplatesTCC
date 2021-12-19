@@ -62,7 +62,7 @@
 % Adequado para atender a norma ABNT 6023:2018 por Profa. Dra. Ana Paula Müller Giancoli - 27/03/2020
 \usepackage{url6023} 
 
-
+\newcommand{\Csh}{C{\#}}
 
 % -- 
 % Pacote para moldura
@@ -192,7 +192,7 @@
    \small \textbf{Título do Projeto:}
 \end{flushleft} 
 \normalsize
-Título do meu projeto\\
+Indicar aqui o Título do projeto\\
 
 \begin{flushleft}
 \textbf{Problema de pesquisa (pergunta):}
@@ -207,11 +207,8 @@ Título do meu projeto\\
 \begin{flushleft}
 \textbf{Objetivo Geral:}
 \end{flushleft} 
+\input{includes/objetivogeral}
 
-
-\justify
-
-\hspace{0.5cm} O objetivo Geral é ...
 
 \begin{flushleft}
 \textbf{Objetivos Específicos:}
@@ -269,6 +266,10 @@ Título do meu projeto\\
 		\hline
 	\end{tabular}
 \end{center}
+
+
+% Inserir um percentual na frente para comentar e não aparecer na compilação do documento final.
+\input{exemplos}
 
 \end{document}
 
