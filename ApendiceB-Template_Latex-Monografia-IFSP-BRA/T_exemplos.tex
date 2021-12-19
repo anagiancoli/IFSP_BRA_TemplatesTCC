@@ -1,0 +1,255 @@
+\chapter{Exemplos}
+\label{cap:99}
+
+Texto considerando a revisão da literatura pertinente, dividido em seções e subseções.
+
+Este é um exemplo de como usar figuras. Referência cruzada: Figura~\ref{fig:exemplo}
+
+\FloatBarrier
+\begin{figure}[!htbp]
+	\centering
+	\caption{Exemplo de figura}
+	%scale redimensiona a figura.
+	%1.5 = 150% do tamanho original
+	%1 = 100% do tamanho original
+	%0.20 = 20% do tamanho original
+	\includegraphics[scale=1]{imagens/IFSP-BRA.png}
+	\legend{Fonte: Disponível em: http://bra.ifsp.edu.br. Acesso em 27 mar. 2020}.
+	\label{fig:exemplo}
+\end{figure}
+\FloatBarrier
+
+
+Este é um exemplo de como usar tabelas. Referência cruzada: Tabela~\ref{tab:exemplo}
+
+\FloatBarrier
+\begin{table}[!htbp]
+\centering
+\caption{Exemplo de tabela de 2 colunas}
+	\begin{tabular}{ c | c }
+		\hline
+		\textbf{Coluna 1} & \textbf{Coluna 2} \\ \hline
+		Dado 1a           & Dado 2a           \\ \hline
+		Dado 1b           & Dado 2b           \\ \hline
+		Dado 1c           & Dado 2c           \\ \hline
+		Dado 1d           & Dado 2d           \\ \hline
+	\end{tabular}
+	\\ \vspace{0.2cm}
+	Fonte: Autoria própria
+	\label{tab:exemplo}
+\end{table}
+\FloatBarrier
+
+
+Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{qua:exemplo}
+
+\FloatBarrier
+\begin{quadro}[!htbp]
+	\centering
+	\caption{Exemplo de quadro}
+	\includegraphics[scale=.7]{imagens/exemploQuadro}
+	\\Fonte: Autoria própria
+	\label{qua:exemplo}
+\end{quadro}
+\FloatBarrier
+
+Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:exemploquad}
+
+\FloatBarrier
+\begin{quadro}[!htbp]
+\centering
+\caption{Exemplo de Quadro de 3 colunas}
+	\begin{tabular}{ | m{10em} | m{4cm}| m{4cm} | }
+		\hline
+		\textbf{Coluna 1} & \textbf{Coluna 2} & \textbf{Coluna 3} \\ \hline
+		Dado 1a           & Dado 2a & \\ \hline
+		Dado 1b           & Dado 2b & \\ \hline
+		Dado 1c           & Dado 2c & \\ \hline
+		Dado 1d           & Dado 2d & \\ \hline
+	\end{tabular}
+	\\ \vspace{0.2cm}
+	Fonte: Autoria própria
+	\label{tab:exemploquad}
+\end{quadro}
+\FloatBarrier
+
+Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:exemplo2}
+
+\FloatBarrier
+\begin{quadro}[!htbp]
+\centering
+\caption{Exemplo de Quadro de 2 colunas}
+	\begin{tabular}{ | m{10em} | m{4cm}| }
+		\hline
+		\textbf{Coluna 1} & \textbf{Coluna 2}  \\ \hline
+		Dado 1a           & Dado 2a  \\ \hline
+		Dado 1b           & Dado 2b  \\ \hline
+		Dado 1c           & Dado 2c  \\ \hline
+		Dado 1d           & Dado 2d  \\ \hline
+	\end{tabular}
+	\\ \vspace{0.2cm}
+	Fonte: Autoria própria
+	\label{tab:exemplo2}
+\end{quadro}
+\FloatBarrier
+
+Este é um exemplo de como usar equações. Referência cruzada: Equação~\ref{eq:exemplo}
+
+\begin{equation}
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+\label{eq:exemplo}
+\end{equation}
+
+\clearpage
+
+Exemplo de inserção de lista de código fonte (\textbf{\textcolor{red}{não use acentos no código!}}):
+
+\lstinputlisting[language=Java]{fontes/ClasseExemplo.java} 
+
+
+
+Este é um exemplo de como inserir texto sem formatação (ambiente verbatim):
+
+\begin{verbatim}
+	Texto sem formatação, como espaçamento igual.
+\end{verbatim}
+
+
+Exemplo de lista de itens:
+
+\begin{itemize}
+	\item \textbf{Item 1:} texto...;
+	\item \textbf{Item 2:} texto...;
+    \begin{itemize}
+            \item \textbf{Subitem:} texto...;
+            \item \textbf{Subitem:} texto...;
+            \item \textbf{Subitem:} texto...;
+        \end{itemize}
+	\item \textbf{Item 3:} texto...;
+	\item \textbf{Item n:} texto....
+\end{itemize}
+
+
+Exemplo de lista numerada:
+
+\begin{enumerate}
+	\item \textbf{Item:} texto...;
+	\item \textbf{Item:} texto...;
+    \begin{enumerate}
+        \item \textbf{Subitem:} texto...;
+        \item \textbf{Subitem:} texto...;
+        \item \textbf{Subitem:} texto...;
+    \end{enumerate}
+	\item \textbf{Item:} texto...;
+	\item \textbf{Item:} texto....
+\end{enumerate}
+
+Tipos de referência a serem utilizados no arquivo referencias.bib:
+Exemplos de estruturas.\\
+
+@article{<citation key>,
+    author        = {},
+    title         = {},
+    journaltitle  = {},
+    year          = {}
+}
+
+@online{<citation key>,
+    author        = {},
+    title         = {},
+    year          = {},
+    url           = {},
+    urlaccessdate = {}
+}
+
+@book{<citation key>,
+    author        = {},
+    title         = {},
+    year          = {}
+}
+
+@misc{<citation key>,
+    author        = {},
+    title         = {},
+    year          = {},
+    url           = {},
+    urlaccessdate = {}
+}
+
+
+Exemplos de comandos para texto e referências:
+
+\begin{itemize}
+	\item Para iniciar um novo parágrafo, basta deixar uma linha em branco no código fonte;
+	\item Não force o compilador a pular mais de uma linha, pois terá influência negativa na composição do documento;
+	\item Sempre deixe o \LaTeX\ realizar a formatação de parágrafos e posicionamento de elementos;
+	\item Utilização de aspas simples (abertura \verb|`|, fechamento \verb|'|): `Texto entre aspas simples';
+	\item Utilização de aspas duplas (abertura \verb|``|, fechamento \verb|''|): ``Texto entre aspas duplas'';
+	\item Negrito (comando \verb|\textbf|): \textbf{texto em negrito};
+	\item Itálico (comando \verb|\textit|): \textit{texto em itálico};
+	\item Sublinhado (comando \verb|\underline|): \underline{texto sublinhado};
+	\item Negrito e itálico (usar comandos juntos): \textbf{\textit{texto em negrito e itálico}};
+	\item Alterar cor do texto (comando \verb|\textcolor{cor}{texto}|):
+	\begin{itemize}
+		\item Exemplo \verb|\textcolor{red}{texto}|: \textcolor{red}{texto vermelho};
+		\item Exemplo \verb|\textcolor[RGB]{255, 102, 0}|: \textcolor[RGB]{255, 102, 0}{texto laranja};
+		\item Exemplo \verb|\textcolor[HTML]{006AD7}|: \textcolor[HTML]{006AD7}{texto azul};
+	\end{itemize}
+	\item Ambiente matemático inline (comando \verb|$ expressão $|): $s = x^2-2x +1$;
+	\item Referência normal (comando \verb|\cite|):
+	\begin{itemize}
+		\item \cite{Agaisse1995};
+		\item \cite{Abedi2014};
+		\item \cite{Baum2016};
+	\end{itemize}
+	\item Referência normal com mais de uma obra (comando \verb|\cite|):
+	\begin{itemize}
+		\item \cite{Abedi2014, Agaisse1995};
+		\item \cite{AgapitoTenfen2014, Baum2016, Nelson2014};
+	\end{itemize}
+	\item Referência nome e ano (comando \verb|\citeauthorandyear|):
+	\begin{itemize}
+		\item \citeauthorandyear{bervian2007a};
+		\item \citeonline{bervian2007a};
+		\item \citeauthorandyear{documento2018};
+		\item \citeauthorandyear{Abedi2014};
+	\end{itemize}
+	\item Referência apud ({mais antigo} {mais novo}):\\
+	\verb|\apud[pagina]{autor-indireto}{autor-direto}|):
+	\begin{itemize}
+		\item \apud{Agaisse1995}{Abedi2014};
+		\item \apudonline{Agaisse1995}{Abedi2014};
+	\end{itemize}
+	\item Referência apud [pagina]({mais antigo} {mais novo}):\\
+	\verb|\apud[pagina]{autor-indireto}{autor-direto}|):
+	\begin{itemize}
+		\item \apud[p. 81]{Agaisse1995}{Abedi2014};
+		\item \apudonline[p. 81]{Agaisse1995}{Abedi2014};
+	\end{itemize}
+	
+	\item Referência do mesmo autor, mesmo ano com obras distintas 
+	\verb|\citeauthorandyear|):
+	\begin{itemize}
+		\item \citeauthorandyear{Agaisse1996a};
+		\item \citeauthorandyear{Agaisse1996b};
+		\item \cite{Agaisse1996a};
+		\item \cite{Agaisse1996b};
+	\end{itemize}
+	
+	
+\end{itemize}
+
+
+Exemplo 1 de citação direta:
+
+\begin{citacao}
+	Os 20 aminoácidos usualmente encontrados como resíduos em proteínas contém um grupo $\alpha$-carboxil, um grupo $\alpha$-amino e um grupo R distinto substituído no átomo de carbono $\alpha$. O átomo de carbono $\alpha$ de todos os aminoácidos, com exceção da glicina, é assimétrico e, portanto, os aminoácidos podem existir em pelo menos duas formas estereoisoméricas. Somente os estereoisômeros L, com uma configuração relacionada à configuração absoluta da molécula de referência L-gliceraldeído, são encontrados em proteínas \cite[p. 81]{Nelson2014}.
+\end{citacao}
+
+Exemplo 2 de citação direta:
+
+\begin{citacao}
+	\textit{These various insecticidal proteins are synthesized during the stationary phase and accumulate in the mother cell as a crystal inclusion which can account for up to 25\% of the dry weight of the sporulated cells. The amount of crystal protein produced by a B. thuringiensis culture in laboratory conditions (about 0.5 mg of protein per ml) and the size of the crystals (24) indicate that each cell has to synthesize $10^6$ to $2 \times 10^6$ $\delta$-endotoxin molecules during the stationary phase to form a crystal} \cite[p. 1]{Agaisse1995}.
+\end{citacao}
+
+Exemplo de nota de rodapé\footnote{Essa é uma nota de rodapé!}.
