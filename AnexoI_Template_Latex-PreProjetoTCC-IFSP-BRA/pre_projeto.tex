@@ -98,8 +98,11 @@
 \newcommand{\coorient}[1]{\def \ocoorient {#1}}
 \newcommand{\imprimircoorient}{\ocoorient}
 
+% ------ ATUALIZAR
 \orient{Nome do Orientador com o título}
 \coorient{-}
+
+
 % --
 % Autores
 % --
@@ -118,9 +121,12 @@
 \newcommand{\prontuarioC}[1]{\def \oprontuarioC {#1}}
 \newcommand{\imprimirprontuarioC}{\oprontuarioC}
 
+% -- Atualizar
+% -- Inserir sempre os nomes dos alunos em ordem alfabética
 \prontuarioA{BP9999999}
 \autorA{Nome do autor A}
 
+% ----- Caso não tenha mais alunos, basta excluir o conteúdo existente dentro das chaves de \prontuarioB{}, \autorB{}, \prontuarioC{}, \autorC{}
 \prontuarioB{BP9999999}
 \autorB{Nome do autor B}
 
@@ -192,47 +198,56 @@
    \small \textbf{Título do Projeto:}
 \end{flushleft} 
 \normalsize
+% --- Alterar o Título do Projeto:
 Indicar aqui o Título do projeto\\
 
 \begin{flushleft}
 \textbf{Problema de pesquisa (pergunta):}
 \end{flushleft} 
+% --- Para inserir o problema de pesquisa, localize o arquivo e altere
 \input{includes/problemapesquisa}
 
 \begin{flushleft}
 \textbf{Justificativa (relevância do estudo):}
 \end{flushleft} 
+% --- Para inserir a justificativa, localize o arquivo e altere
 \input{includes/justificativa}
 
 \begin{flushleft}
 \textbf{Objetivo Geral:}
 \end{flushleft} 
+% --- Para inserir o objetivo geral, localize o arquivo e altere
 \input{includes/objetivogeral}
 
 
 \begin{flushleft}
 \textbf{Objetivos Específicos:}
 \end{flushleft} 
+% --- Para inserir os objetivos especificos, localize o arquivo e altere
 \input{includes/objetivosespec}
 
 \begin{justify}
 \textbf{Método de Pesquisa (definição da linha metodológica coerente com o problema:}
 \end{justify} 
+% --- Para inserir o metodo, localize o arquivo e altere
 \input{includes/metodo}
 
 \begin{justify}
 \textbf{Metodologia do Desenvolvimento do Sistema (descrição do processo de desenvolvimento, objeto de estudo, tecnologias, requisitos, ferramentas e procedimentos de elaboração e de análise do sistema):}
 \end{justify} 
+% --- Para inserir a metodologia, localize o arquivo e altere
 \input{includes/metodologia}
 
 \begin{flushleft}
 \textbf{Resultados esperados:}
 \end{flushleft} 
+% --- Para inserir os resultados, localize o arquivo e altere
 \input{includes/resultados}
 
 \begin{flushleft}
 \textbf{Cronograma (considerar o 5$^o$. e 6$^o$. módulos:}
 \end{flushleft} 
+% --- Para inserir o cronograma, localize o arquivo e altere
 \input{includes/cronograma}
 
 
@@ -267,9 +282,12 @@ Indicar aqui o Título do projeto\\
 	\end{tabular}
 \end{center}
 
-
+% ---
+% Para gerar a versão FINAL, comentar essa chamada %\input{exemplos}
 % Inserir um percentual na frente para comentar e não aparecer na compilação do documento final.
 \input{exemplos}
+% ---
+
 
 \end{document}
 
