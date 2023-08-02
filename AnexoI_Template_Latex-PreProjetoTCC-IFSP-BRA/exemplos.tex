@@ -9,6 +9,7 @@ Texto considerando a revisão da literatura pertinente, dividido em seções e s
 Este é um exemplo de como usar figuras. Referência cruzada: Figura~\ref{fig:exemplo}
 
 
+
 \begin{figure}[!htbp]
 	\centering
 	\caption{Exemplo de figura}
@@ -16,16 +17,18 @@ Este é um exemplo de como usar figuras. Referência cruzada: Figura~\ref{fig:ex
 	%1.5 = 150% do tamanho original
 	%1 = 100% do tamanho original
 	%0.20 = 20% do tamanho original
-	\includegraphics[scale=1]{imagens/IFSP-BRA.png}
-	\legend{Fonte: Disponível em: http://bra.ifsp.edu.br. Acesso em 27 mar. 2020}.
+	\fbox{\includegraphics[scale=1]{imagens/IFSP-BRA.png}}
+    \legend{Fonte: Autor (ano)}	
+    % Registrar o autor em referencias.bib e citar aqui usando citeonline{chave}.
+    %\legend{Fonte: Disponível em: http://bra.ifsp.edu.br. Acesso em: 27 mar. 2020}
+    %\legend{Fonte: Autor (ano) ou \citetext{chave}}
 	\label{fig:exemplo}
 \end{figure}
 
 
-
 Este é um exemplo de como usar tabelas. Referência cruzada: Tabela~\ref{tab:exemplo}
 
-
+%\FloatBarrier
 \begin{table}[!htbp]
 \centering
 \caption{Exemplo de tabela de 2 colunas}
@@ -38,15 +41,27 @@ Este é um exemplo de como usar tabelas. Referência cruzada: Tabela~\ref{tab:ex
 		Dado 1d           & Dado 2d           \\ \hline
 	\end{tabular}
 	\\ \vspace{0.2cm}
-	Fonte: Autoria própria
+	Fonte: Autoria própria (ano)
 	\label{tab:exemplo}
 \end{table}
+%\FloatBarrier
 
+
+Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{qua:exemplo1}
+
+
+\begin{quadro}[!htbp]
+	\centering
+	\caption{Exemplo de quadro}
+	\includegraphics[scale=.7]{imagens/exemploQuadro}
+	\\Fonte: Autoria própria (ano)
+	\label{qua:exemplo1}
+\end{quadro}
 
 
 Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:exemploquad}
 
-
+%\FloatBarrier
 \begin{quadro}[!htbp]
 \centering
 \caption{Exemplo de Quadro de 3 colunas}
@@ -59,14 +74,14 @@ Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:ex
 		Dado 1d           & Dado 2d & \\ \hline
 	\end{tabular}
 	\\ \vspace{0.2cm}
-	Fonte: Autoria própria
+	Fonte: Autoria própria (ano)
 	\label{tab:exemploquad}
 \end{quadro}
-
+%\FloatBarrier
 
 Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:exemplo2}
 
-
+%\FloatBarrier
 \begin{quadro}[!htbp]
 \centering
 \caption{Exemplo de Quadro de 2 colunas}
@@ -79,10 +94,10 @@ Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:ex
 		Dado 1d           & Dado 2d  \\ \hline
 	\end{tabular}
 	\\ \vspace{0.2cm}
-	Fonte: Autoria própria
+	Fonte: Autoria própria (ano)
 	\label{tab:exemplo2}
 \end{quadro}
-
+%\FloatBarrier
 
 Este é um exemplo de como usar equações. Referência cruzada: Equação~\ref{eq:exemplo}
 
@@ -92,6 +107,11 @@ Este é um exemplo de como usar equações. Referência cruzada: Equação~\ref{
 \end{equation}
 
 \clearpage
+
+Exemplo de inserção de lista de código fonte (\textbf{\textcolor{red}{não use acentos no código!}}):
+
+%\lstinputlisting[language=Java]{fontes/ClasseExemplo.java} 
+
 
 
 Este é um exemplo de como inserir texto sem formatação (ambiente verbatim):
@@ -162,11 +182,6 @@ Exemplos de estruturas.\\
     urlaccessdate = {}
 }
 
-Exemplos de Notas de rodapé de leis: \\
-
-... instituído pela Lei Complementar Nº 128\footnote{BRASIL. LEI COMPLEMENTAR Nº 128, de 19 de dezembro de 2008. Altera a Lei Complementar Nº 123, de 14 de dezembro de 2006, altera as Leis nos 8.212, de 24 de julho de 1991, 8.213, de 24 de julho de 1991, 10.406, de 10 de janeiro de 2002 – Código Civil, 8.029, de 12 de abril de 1990, e dá outras providências. \textbf{Diário Oficial [da] República Federativa do Brasil}, Brasília, DF, 19 dez. 2008. Disponível em: http://www.planalto.gov.br/ccivil\_03/leis/lcp/lcp128.htm. Acesso em: 24 nov 2021.}
-\\
-\\
 
 Exemplos de comandos para texto e referências:
 
@@ -192,6 +207,7 @@ Exemplos de comandos para texto e referências:
 		\item \cite{Agaisse1995};
 		\item \cite{Abedi2014};
 		\item \cite{Baum2016};
+        
 	\end{itemize}
 	\item Referência normal com mais de uma obra (comando \verb|\cite|):
 	\begin{itemize}
@@ -204,6 +220,8 @@ Exemplos de comandos para texto e referências:
 		\item \citeonline{bervian2007a};
 		\item \citeauthorandyear{documento2018};
 		\item \citeauthorandyear{Abedi2014};
+        \item \citeonline{schaefer2022};
+        \item \citeonline{castro2019};
 	\end{itemize}
 	\item Referência apud ({mais antigo} {mais novo}):\\
 	\verb|\apud[pagina]{autor-indireto}{autor-direto}|):
@@ -244,3 +262,5 @@ Exemplo 2 de citação direta:
 \end{citacao}
 
 Exemplo de nota de rodapé\footnote{Essa é uma nota de rodapé!}.
+
+Exemplo de rodapé com referência indicada nele\footnote{\citetext{marciano2020}}
