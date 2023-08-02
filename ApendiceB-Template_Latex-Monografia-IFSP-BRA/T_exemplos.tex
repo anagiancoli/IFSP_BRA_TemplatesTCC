@@ -13,8 +13,9 @@ Este é um exemplo de como usar figuras. Referência cruzada: Figura~\ref{fig:ex
 	%1.5 = 150% do tamanho original
 	%1 = 100% do tamanho original
 	%0.20 = 20% do tamanho original
-	\includegraphics[scale=1]{imagens/IFSP-BRA.png}
-	\legend{Fonte: Disponível em: http://bra.ifsp.edu.br. Acesso em 27 mar. 2020}.
+	\fbox{\includegraphics[scale=1]{imagens/IFSP-BRA.png}}
+	\legend{Fonte: Disponível em: http://bra.ifsp.edu.br. Acesso em: 27 mar. 2020}
+        %\legend{Fonte: Autor (ano) ou \citetext{chave}}
 	\label{fig:exemplo}
 \end{figure}
 \FloatBarrier
@@ -35,7 +36,7 @@ Este é um exemplo de como usar tabelas. Referência cruzada: Tabela~\ref{tab:ex
 		Dado 1d           & Dado 2d           \\ \hline
 	\end{tabular}
 	\\ \vspace{0.2cm}
-	Fonte: Autoria própria
+	Fonte: Autoria própria (ano)
 	\label{tab:exemplo}
 \end{table}
 \FloatBarrier
@@ -48,7 +49,7 @@ Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{qua:ex
 	\centering
 	\caption{Exemplo de quadro}
 	\includegraphics[scale=.7]{imagens/exemploQuadro}
-	\\Fonte: Autoria própria
+	\\Fonte: Autoria própria (ano)
 	\label{qua:exemplo}
 \end{quadro}
 \FloatBarrier
@@ -68,7 +69,7 @@ Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:ex
 		Dado 1d           & Dado 2d & \\ \hline
 	\end{tabular}
 	\\ \vspace{0.2cm}
-	Fonte: Autoria própria
+	Fonte: Autoria própria (ano)
 	\label{tab:exemploquad}
 \end{quadro}
 \FloatBarrier
@@ -88,7 +89,7 @@ Este é um exemplo de como usar quadros. Referência cruzada: Quadro~\ref{tab:ex
 		Dado 1d           & Dado 2d  \\ \hline
 	\end{tabular}
 	\\ \vspace{0.2cm}
-	Fonte: Autoria própria
+	Fonte: Autoria própria (ano)
 	\label{tab:exemplo2}
 \end{quadro}
 \FloatBarrier
@@ -201,6 +202,7 @@ Exemplos de comandos para texto e referências:
 		\item \cite{Agaisse1995};
 		\item \cite{Abedi2014};
 		\item \cite{Baum2016};
+        
 	\end{itemize}
 	\item Referência normal com mais de uma obra (comando \verb|\cite|):
 	\begin{itemize}
@@ -213,6 +215,8 @@ Exemplos de comandos para texto e referências:
 		\item \citeonline{bervian2007a};
 		\item \citeauthorandyear{documento2018};
 		\item \citeauthorandyear{Abedi2014};
+        \item \citeonline{schaefer2022};
+        \item \citeonline{castro2019};
 	\end{itemize}
 	\item Referência apud ({mais antigo} {mais novo}):\\
 	\verb|\apud[pagina]{autor-indireto}{autor-direto}|):
@@ -253,3 +257,5 @@ Exemplo 2 de citação direta:
 \end{citacao}
 
 Exemplo de nota de rodapé\footnote{Essa é uma nota de rodapé!}.
+
+Exemplo de rodapé com referência indicada nele\footnote{\citetext{marciano2020}}
